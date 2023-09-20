@@ -26,7 +26,6 @@ export default function ButtonAppBar() {
       width: 'auto',
     },
   }));
-  
   const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
@@ -36,7 +35,6 @@ export default function ButtonAppBar() {
     alignItems: 'center',
     justifyContent: 'center',
   }));
-
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
@@ -53,11 +51,6 @@ export default function ButtonAppBar() {
       },
     },
   }));
-
-
-
-
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -67,8 +60,7 @@ export default function ButtonAppBar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
-          >
+            sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -80,11 +72,9 @@ export default function ButtonAppBar() {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
+              inputProps={{ 'aria-label': 'search' }} />
           </Search>
-          <img src='https://shorturl.at/wzCMZ' alt='cisco' height={60} width={80} />
-          
+          <img src='images/appbar-logo.png' alt='cisco' height={60} width={80} />
         </Toolbar>
       </AppBar>
     </Box>
