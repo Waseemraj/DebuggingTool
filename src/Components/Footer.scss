@@ -1,0 +1,24 @@
+.webexlogo{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;   
+    padding: 24px;
+    position: absolute;
+    width: 100vw;
+
+}
+
+.lan{
+    background-color: black;
+    color: black;
+}
+ul{
+    li{
+        list-style-type: none;    
+    }
+}
+
+li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
