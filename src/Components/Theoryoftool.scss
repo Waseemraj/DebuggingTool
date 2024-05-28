@@ -1,0 +1,33 @@
+.theory {
+    margin-left: 2rem;
+    background-color: #eee8e8;
+    padding-left: 1rem;
+    .head {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .details {
+      margin-top: 2rem;
+  
+      .basic_info {
+        margin-top: 1.3rem;
+  
+        .mapping-subscription-info {
+          margin-bottom: 1rem;
+  
+          .mapping-subscription-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.8rem 0;
+          }
+  
+          .mapping-subscription-details {
+            line-height: 1.5rem;
+            font-weight: 450;
+          }
+        }
+      }
+    }
+  }
+  

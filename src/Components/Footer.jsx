@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="webexlogo">
             <ul>
                 <li>
-                    <img src='images/Footer-logo.png' height={70}  width={80} alt="webex" />
+                    <img src='/images/Footer-logo.png' height={70}  width={80}  alt="webex" />
                 </li>
             </ul>
             <div className='lists'>

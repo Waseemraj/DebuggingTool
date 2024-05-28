@@ -1,0 +1,31 @@
+.left_box {
+    width: 22vw;
+    height: 71.5vh;
+    cursor: pointer;
+    padding: 1.8rem;
+  
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      .build {
+        font-weight: bold;
+        font-size: 1.4rem;
+        margin-top: .8rem;
+        padding: .4rem;
+      }
+    }
+  
+    .Link {
+      font-size: 1rem;
+      padding: .4rem;
+      font-weight: 500;
+  
+      &:hover {
+        font-weight: bold;
+        background-color: rgba(201, 244, 255, .6) !important;
+      }
+    }
+  }
+  
