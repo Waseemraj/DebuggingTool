@@ -18,10 +18,7 @@ export default function Tool() {
   
   return (
     <>
-    <div className="tool " style={{
-        display:'flex',
-        
-    }}>
+    <div className="tool  flex " >
     <Theoryoftool/>
     <Forms/>
     </div>

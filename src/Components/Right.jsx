@@ -9,7 +9,7 @@ export default function Right() {
   
   return (
     <>
-      <div className="right_box" style={{width: '77.6vw', height: '71.5vh'}}>
+      <div className=" w-[77.6vw] h-[71.5vh]">
       <Routes>
       <Route index element={< Gettingstarted/>} />
       
@@ -23,3 +23,4 @@ export default function Right() {
     </>
   );
 }
+//
