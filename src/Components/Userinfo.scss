@@ -1,37 +1,22 @@
-.card{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: (100vw-50vw);
-    align-items: center;
-    margin: auto;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    color: gray;
-    padding: 10px; 
-}
-
-.userinfobox{
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    
-
-}
-
-.userinfoboxmain{
-    margin-top: 12px;
-
-}
-.p1{
-    color: black;
-    font-size: larger;
-    margin-right: 20px;
-    align-items: start;
-    align-content: flex-start;
-    margin-bottom: 3px;
-}
-
-.name{
-    color: rgb(0, 128, 53);
-}
+.box_1 {
+    padding-top: 1.2rem;
+    background-color: rgb(132, 132, 96);
+    color: white;
+    border-radius: 10px;
+  
+    .status {
+      margin-left: .8rem;
+    }
+  
+    .mapping_staus,
+    .remark {
+      margin: 1.2rem 0px 1.5rem 1.5rem;
+      display: flex;
+    }
+  
+    .remark {
+      margin: 1.2rem 1rem 2rem 1.5rem;
+      padding-bottom: 1rem;
+    }
+  }
+  

@@ -1,19 +1,26 @@
 import React from 'react'
 import { Forms } from './Components/Forms'
-import ButtonAppBar from './Components/Appbar'
-import {  Usermapping } from './Contexts/Usercontext'
 import './App.scss'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'; // Import BrowserRouter
 import { Footer } from './Components/Footer'
+import Navbar from './Components/Navbar'
+import Main from './Components/Main';
+import Start from './Components/Start';
 export const App = () => {
   return (
-    <div className='main'>
-      <Usermapping>
-      <ButtonAppBar />
-      <br />
-      <Forms />
-      <br />
-      </Usermapping>
+    <>
+      <BrowserRouter>
+            <Navbar/>
+      
+      <Routes>
+      <Route index element={< Start/>} />
+      <Route path="/docs/*" element={<Main />} />
+     
+      </Routes>
+     
+     
       <Footer />
-    </div>
+      </BrowserRouter>
+    </>
   )
 }

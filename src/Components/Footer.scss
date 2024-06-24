@@ -1,24 +1,31 @@
-.webexlogo{
+.webexlogo {
     display: flex;
     justify-content: space-evenly;
-    background-color: white;   
+    background-color: rgb(4, 9, 42);
     padding: 24px;
     position: absolute;
     width: 100vw;
-
-}
-
-.lan{
+    color: white;
+  
+    ul {
+      li {
+        list-style-type: none;
+  
+        &:hover {
+          text-decoration: none;
+          cursor: pointer;
+        }
+  
+        img {
+          height: 70px;
+          width: 80px;
+        }
+      }
+    }
+  }
+  
+  .lan {
     background-color: black;
     color: black;
-}
-ul{
-    li{
-        list-style-type: none;    
-    }
-}
-
-li:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
+  }
+  

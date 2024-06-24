@@ -1,80 +1,72 @@
-import React from 'react'
-import Card from '@mui/material/Card';
-import './Userinfo.scss'
-import Typography from '@mui/material/Typography';
-import { useUserDetails } from '../Contexts/Usercontext';
-import Badge from '@mui/material/Badge';
-import Avatar from '@mui/material/Avatar';
-import { styled } from '@mui/material/styles';
+import React from "react";
+import "./Userinfo.scss";
+import { useUserDetails } from "../Contexts/Usercontext";
 
-
+import { useState, useEffect } from "react";
 
 export const Userinfo = ({ props }) => {
-
-  const { userActive, phoneNumber, lastLogin, userFound, userCreationDate, userSubscribed, name } = useUserDetails();
-  // const { wxUserId, msUserId, wxOrgId } = props;
-  const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-      backgroundColor: userFound && userActive ? '#44b700	' : '#ff0000',
-      color: '#44b700',
-      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-      '&::after': {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        borderRadius: '50%',
-        border: '1px solid currentColor'
-
-      },
+  const [mapingstatus, setmapiingstatus] = useState("");
+  const [subscriptionstatus, setsubscriptionstatus] = useState("");
+  const { userFound, mapping_or_subscription, userSubscribed } =useUserDetails();
+  const [Remark, setRemark] = useState("");
+  const [mapping, setmapping] = useState("");
+  const [subscription, setsubscription] = useState("");
+  useEffect(() => {
+    if (mapping_or_subscription == "mapping") {
+      setmapping("mapping");
+    } else {
+      setsubscription("subscription");
     }
-  }))
 
-  // const dateObject = new Date(lastLogin);
-  // const formattedDate = dateObject.toISOString().split('T')[0];
-
+    if (userFound) {
+      if (userSubscribed) {
+        setmapiingstatus("Wx User Id and MS User Id are Mapped properly");
+        setsubscriptionstatus("This User Is Subscribed");
+        setRemark(
+          "Based on the above information,we are concluding that this user presence works smoothly."
+        );
+      } else {
+        setsubscriptionstatus("Mapping is Present ,User is not Subscribed.");
+        setRemark(
+          "Based on the above information,we are concluding that this user is mapped but not Subscribed"
+        );
+      }
+    } else {
+      setsubscriptionstatus(
+        "Mapping is missing ,User will not be able to Subscribed."
+      );
+      setmapiingstatus("Wx User Id and MS User Id are not Mapped properly");
+      setRemark(
+        "Based on the above information,we are concluding that this user needs to login into integeration app."
+      );
+    }
+  }, [userFound, userSubscribed]);
   return (
-    <div>
-      <Card className='card' variant='outlined' >
-        <Typography sx={{ fontWeight: '700', color: 'black', marginBottom:'6px', padding:'8px' }} component="div" variant="h5">
-          User Details Are Following 
-          {/* {wxUserId + msUserId +  wxOrgId} */}
-          
-          <hr></hr>
-        </Typography>
+    <>
+      <div className="user_info">
+        <div className="box_1">
+          {mapping && (
+            <div className="mapping_staus">
+              <div className="mapping_text ">Mapping Status</div>
+              <span className="status">:</span>{" "}
+              <div className="status">{mapingstatus}</div>
+            </div>
+          )}
 
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          variant="dot"
-        >
-          <Avatar alt={name.toUpperCase()} src="./src/assets" sx={{ width: 60, height: 60, marginTop:'14px'}} />
-        </StyledBadge>
-
-        {userFound ?
-          <div className='userinfoboxmain' >
-            <div className='userinfobox'>
-              <p className='p1'>Name : </p>
-              <p className='p2'>{name.toUpperCase()}</p>
+          {subscription && (
+            <div className="mapping_staus">
+              <div className="mapping_text">Subscription Status</div>
+              <span className="status">:</span>{" "}
+              <div className="status">{subscriptionstatus}</div>
             </div>
-            <div className='userinfobox'>
-              <p className='p1'>Created At : </p>
-              <p className='p2'>{userCreationDate}</p>
-            </div>
-            <div className='userinfobox'>
-              <p className='p1'>Last Login : </p>
-              <p className='p2'>{lastLogin}</p>
-            </div>
-            <div className='userinfobox'>
-              <p className='p1'>Phone No. : </p>
-              <p className='p2'>{phoneNumber}</p>
-            </div>
+          )}
+          <div className="remark">
+            <div>Remark</div>
+            <span className="status">:</span>
+            <div className="status">{Remark}</div>
           </div>
-          : <h3 style={{marginTop:'15px', fontSize:'18px', fontWeight:'600'}}>Mapping Not Exist</h3>}
-          
-        { userSubscribed ? <h3 style={{ backgroundColor: 'green', color: 'white', padding: '6px', margin:'14px', borderRadius: '12px', fontSize:'23px' }}>This User Is Subscribed</h3> : <h3 style={{ backgroundColor: 'red', fontSize:'23px' , color: 'white', padding: '6px', borderRadius: '12px', margin:'18px' }} >User is not Subscribed</h3>}
-      </Card>
-    </div>
-  )
-}
+        </div>
+      </div>
+    </>
+  );
+};

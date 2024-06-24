@@ -1,0 +1,62 @@
+.navbar {
+    color: white;
+    background-color: #0a0622;
+    width: 100vw;
+  
+    .nav {
+      display: flex;
+      height: 12.3vh;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem;
+      flex-wrap: wrap;
+  
+      .logo {
+        margin: 0 0 0 4vw;
+  
+        .Webex {
+          font-weight: bold;
+          font-size: 25px;
+          margin-right: 5px;
+        }
+      }
+  
+      .list {
+        display: flex;
+        list-style: none;
+  
+        li {
+          list-style: none;
+          display: flex;
+          margin: 0 1vw;
+          font-size: 16px;
+          text-decoration: none;
+  
+          &:hover {
+            color: rgb(112, 112, 207);
+            text-decoration: none;
+          }
+        }
+      }
+  
+      .serach_box {
+        display: flex;
+        align-items: center;
+        position: relative;
+  
+        .Search_icon {
+          position: absolute;
+          left: .5rem;
+        }
+  
+        .text {
+          border-radius: 20px;
+          height: 5.4vh;
+          background-color: #2d2d35;
+          padding-left: 2rem;
+          outline: none;
+        }
+      }
+    }
+  }
+  
